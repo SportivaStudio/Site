@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="p:domain_verify" content="f2ddb5cafb57fe7084b839c12644476a"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sportiva Studio — Advice & Affirmations for Women Who Move</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .view { display: none; }
+  .view.active { display: block; }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--pink-deep);
+    margin: 24px 0 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo" data-goto="home">Sportiva <span>Studio</span></a>
+    <nav class="nav-links">
+      <a href="#" data-goto="home" data-scroll="advice">Advice</a>
+      <a href="#" data-goto="home" data-scroll="affirmations">Affirmations</a>
+    </nav>
+    <div class="auth-area">
+      <button class="auth-btn" id="openLogin">Log in</button>
+      <button class="auth-btn primary" id="openSignup">Sign up</button>
+      <div class="user-chip" id="userChip">
+        <img id="userAvatar" src="" alt="">
+        <span id="userName"></span>
+        <button id="logoutBtn">Log out</button>
+      </div>
+    </div>
+    <button class="menu-toggle">Menu</button>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top: 0;">
+
+  <div id="view-home" class="view active">
+
+    <section class="hero">
+      <span class="eyebrow">Women's Fitness, Curated</span>
+      <h1>Move with <em>ease</em>. Think with <em>kindness</em>.</h1>
+      <p>Practical fitness advice and gentle affirmations for women who train on their own terms — no noise, just what actually helps.</p>
+      <div class="hero-ctas">
+        <a href="#" data-scroll="advice" class="btn btn-primary">Browse Advice</a>
+        <a href="#" data-scroll="affirmations" class="btn btn-outline">Read Affirmations</a>
+      </div>
+    </section>
+
+    <section id="advice" class="section">
+      <div class="section-head">
+        <h2>Advice worth <span>saving</span></h2>
+        <p>Short, practical posts on movement, gear and habits.</p>
+      </div>
+
+      <div class="grid">
+
+        <a href="#" class="card" data-goto="advice-1">
+          <div class="card-img"><img src="https://picsum.photos/seed/advice1/600/450" alt="Home workout corner"></div>
+          <div class="card-body">
+            <span class="tag">Home Gym</span>
+            <h3>Building a home workout corner that actually gets used</h3>
+            <p>Five small changes that made my 6am sessions stick.</p>
+            <span class="card-link">Read the post →</span>
+          </div>
+        </a>
+
+        <a href="#" class="card" data-goto="advice-2">
+          <div class="card-img"><img src="https://picsum.photos/seed/advice2/600/450" alt="Stretching routine"></div>
+          <div class="card-body">
+            <span class="tag">Recovery</span>
+            <h3>A 10-minute wind-down stretch you'll actually finish</h3>
+            <p>The routine I turn to after long, sitting-heavy days.</p>
+            <span class="card-link">Watch & read →</span>
+          </div>
+        </a>
+
+        <a href="#" class="card" data-goto="advice-3">
+          <div class="card-img"><img src="https://picsum.photos/seed/advice3/600/450" alt="Beginner strength training"></div>
+          <div class="card-body">
+            <span class="tag">Strength</span>
+            <h3>What I wish someone told me before my first strength session</h3>
+            <p>Form cues, common beginner mistakes, and how to enjoy it.</p>
+            <span class="card-link">Read the post →</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="affirmations" class="section tint">
+      <div class="section-head">
+        <h2>Words to <span>pin</span> above your mat</h2>
+        <p>Short affirmations, made to be saved.</p>
+      </div>
+
+      <div class="affirm-grid">
+
+        <a href="#" class="affirm-card" data-goto="affirm-1">
+          <p class="quote">"I don't have to earn rest. I just have to take it."</p>
+          <span class="card-link">Save this →</span>
+        </a>
+
+        <a href="#" class="affirm-card" data-goto="affirm-2">
+          <p class="quote">"Showing up half-hearted still counts as showing up."</p>
+          <span class="card-link">Save this →</span>
+        </a>
+
+        <a href="#" class="affirm-card" data-goto="affirm-3">
+          <p class="quote">"My body is allowed to change. My worth doesn't."</p>
+          <span class="card-link">Save this →</span>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <div id="view-advice-1" class="view">
+    <a href="#" data-goto="home" class="back-link">← Back to all Advice</a>
+    <section class="post-hero" style="padding-left:0; padding-right:0;">
+      <span class="eyebrow">Home Gym · Advice</span>
+      <h1>Building a home workout corner that actually gets used</h1>
+      <p class="meta">By Sportiva Studio · 5 min read</p>
+    </section>
+    <div class="post-cover"><img src="https://picsum.photos/seed/advice1cover/1200/700" alt="Home workout corner setup"></div>
+    <article class="post-body" style="padding-left:0; padding-right:0;">
+      <p>The gap between "I want a home gym" and actually using it every day usually isn't about equipment — it's about friction. Here's what changed once I stopped treating my setup like a storage closet and started treating it like a room with one job.</p>
+      <h2>Start with the floor, not the gear</h2>
+      <p>A dedicated mat or a taped-off rug boundary does more for consistency than any piece of equipment.</p>
+      <div class="pros-cons">
+        <div>
+          <h4>What worked</h4>
+          <ul><li>One resistance band set, visible</li><li>A mat that stays unrolled</li><li>A 10-minute setup rule</li></ul>
+        </div>
+        <div>
+          <h4>What didn't</h4>
+          <ul><li>Dumbbells I never touched</li><li>Anything needing furniture moved</li><li>"Just in case" gear</li></ul>
+        </div>
+      </div>
+      <h2>Watch the full walkthrough</h2>
+      <div class="embed-block">
+        <p class="embed-label">Vlog</p>
+        <div class="video-frame"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Home workout corner walkthrough" allowfullscreen></iframe></div>
+      </div>
+      <h2>Save it for later</h2>
+      <div class="embed-block" style="padding:20px;">
+        <p class="embed-label" style="padding:0 0 12px;">Pinterest Pin</p>
+        <a data-pin-do="embedPin" href="https://www.pinterest.com/pin/YOUR_PIN_ID/"></a>
+        <div class="pin-embed-note">Paste your Pinterest widget code here.</div>
+      </div>
+    </article>
+  </div>
+
+  <div id="view-advice-2" class="view">
+    <a href="#" data-goto="home" class="back-link">← Back to all Advice</a>
+    <section class="post-hero" style="padding-left:0; padding-right:0;">
+      <span class="eyebrow">Recovery · Advice</span>
+      <h1>A 10-minute wind-down stretch you'll actually finish</h1>
+      <p class="meta">By Sportiva Studio · 4 min read</p>
+    </section>
+    <div class="post-cover"><img src="https://picsum.photos/seed/advice2cover/1200/700" alt="Wind-down stretch routine"></div>
+    <article class="post-body" style="padding-left:0; padding-right:0;">
+      <p>Most stretch routines fail because they're too long to finish after a tiring day. This one is short on purpose — ten minutes, five moves, done on the floor.</p>
+      <h2>Watch the routine</h2>
+      <div class="embed-block">
+        <p class="embed-label">Vlog</p>
+        <div class="video-frame"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="10-minute stretch routine" allowfullscreen></iframe></div>
+      </div>
+      <h2>Save it for later</h2>
+      <div class="embed-block" style="padding:20px;">
+        <p class="embed-label" style="padding:0 0 12px;">Pinterest Pin</p>
+        <a data-pin-do="embedPin" href="https://www.pinterest.com/pin/YOUR_PIN_ID/"></a>
+        <div class="pin-embed-note">Paste your Pinterest widget code here.</div>
+      </div>
+    </article>
+  </div>
+
+  <div id="view-advice-3" class="view">
+    <a href="#" data-goto="home" class="back-link">← Back to all Advice</a>
+    <section class="post-hero" style="padding-left:0; padding-right:0;">
+      <span class="eyebrow">Strength · Advice</span>
+      <h1>What I wish someone told me before my first strength session</h1>
+      <p class="meta">By Sportiva Studio · 6 min read</p>
+    </section>
+    <div class="post-cover"><img src="https://picsum.photos/seed/advice3cover/1200/700" alt="Beginner strength training"></div>
+    <article class="post-body" style="padding-left:0; padding-right:0;">
+      <p>Form cues, common beginner mistakes, and the mindset shift that made the biggest difference in my first few months of lifting.</p>
+      <div class="pros-cons">
+        <div>
+          <h4>Do this</h4>
+          <ul><li>Start lighter than feels necessary</li><li>Film your form</li><li>Rest between sets, fully</li></ul>
+        </div>
+        <div>
+          <h4>Skip this</h4>
+          <ul><li>Comparing your week 1 to someone's year 3</li><li>Skipping warm-ups</li><li>Chasing soreness as a metric</li></ul>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div id="view-affirm-1" class="view">
+    <a href="#" data-goto="home" class="back-link">← Back to all Affirmations</a>
+    <section class="post-hero" style="padding-left:0; padding-right:0;">
+      <span class="eyebrow">Affirmation</span>
+      <h1>"I don't have to earn rest. I just have to take it."</h1>
+      <p class="meta">Sportiva Studio · Save this for your next low-motivation day</p>
+    </section>
+    <div class="post-cover"><img src="https://picsum.photos/seed/affirm1cover/1200/700" alt="Affirmation graphic"></div>
+    <article class="post-body" style="padding-left:0; padding-right:0;">
+      <p>Rest gets treated like a reward for effort — something you're allowed once you've done "enough." But recovery isn't a prize at the end of a hard week. It's part of how the body adapts and gets stronger in the first place.</p>
+      <h2>Pin this affirmation</h2>
+      <div class="embed-block" style="padding:20px;">
+        <p class="embed-label" style="padding:0 0 12px;">Pinterest Pin</p>
+        <a data-pin-do="embedPin" href="https://www.pinterest.com/pin/YOUR_PIN_ID/"></a>
+        <div class="pin-embed-note">Paste your Pinterest widget code here.</div>
+      </div>
+    </article>
+  </div>
+
+  <div id="view-affirm-2" class="view">
+    <a href="#" data-goto="home" class="back-link">← Back to all Affirmations</a>
+    <section class="post-hero" style="padding-left:0; padding-right:0;">
+      <span class="eyebrow">Affirmation</span>
+      <h1>"Showing up half-hearted still counts as showing up."</h1>
+      <p class="meta">Sportiva Studio</p>
+    </section>
+    <div class="post-cover"><img src="https://picsum.photos/seed/affirm2cover/1200/700" alt="Affirmation graphic"></div>
+    <article class="post-body" style="padding-left:0; padding-right:0;">
+      <p>Not every session needs to be your best one. A tired, unmotivated, going-through-the-motions workout still moves the needle — perfection was never the requirement.</p>
+      <h2>Pin this affirmation</h2>
+      <div class="embed-block" style="padding:20px;">
+        <p class="embed-label" style="padding:0 0 12px;">Pinterest Pin</p>
+        <a data-pin-do="embedPin" href="https://www.pinterest.com/pin/YOUR_PIN_ID/"></a>
+        <div class="pin-embed-note">Paste your Pinterest widget code here.</div>
+      </div>
+    </article>
+  </div>
+<!--Change to "visual" links to Pinterets posts -->
+  <div id="view-affirm-3" class="view">
+    <a href="#" data-goto="home" class="back-link">← Back to all Affirmations</a>
+    <section class="post-hero" style="padding-left:0; padding-right:0;">
+      <span class="eyebrow">Affirmation</span>
+      <h1>"My body is allowed to change. My worth doesn't."</h1>
+      <p class="meta">Sportiva Studio</p>
+    </section>
+    <div class="post-cover"><img src="https://picsum.photos/seed/affirm3cover/1200/700" alt="Affirmation graphic"></div>
+    <article class="post-body" style="padding-left:0; padding-right:0;">
+      <p>Bodies are meant to shift with seasons, training, age, and life. Tying self-worth to a fixed shape sets up a fight you were never meant to win.</p>
+      <h2>Pin this affirmation</h2>
+      <div class="embed-block" style="padding:20px;">
+        <p class="embed-label" style="padding:0 0 12px;">Pinterest Pin</p>
+        <a data-pin-do="embedPin" href="https://www.pinterest.com/pin/YOUR_PIN_ID/"></a>
+        <div class="pin-embed-note">Paste your Pinterest widget code here.</div>
+      </div>
+    </article>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="#" class="logo" data-goto="home">Sportiva <span>Studio</span></a>
+      <nav class="footer-links">
+        <a href="#" data-goto="home" data-scroll="advice">Advice</a>
+        <a href="#" data-goto="home" data-scroll="affirmations">Affirmations</a>
+        <a href="#">Pinterest</a>
+      </nav>
+    </div>
+    <p class="disclosure">
+      Sportiva Studio participates in affiliate programs, including but not limited to Amazon Associates, Awin, and ShareASale.
+      As an affiliate, we may earn a commission on qualifying purchases made through links on this site, at no additional cost to you.
+    </p>
+    <p class="copyright">© 2026 Sportiva Studio</p>
+  </div>
+</footer>
+
+<script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+
+<!-- ================= AUTH MODAL ================= -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeModal">&times;</button>
+
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabLogin">Log in</button>
+      <button class="modal-tab" id="tabSignup">Sign up</button>
+    </div>
+
+    <h3 id="modalTitle">Welcome back</h3>
+
+    <button class="social-btn" id="googleBtn">
+      <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l6-6C34.5 5.1 29.5 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21c0-1.4-.1-2.5-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.8 1.1 8 3l6-6C34.5 5.1 29.5 3 24 3 15.9 3 8.9 7.6 6.3 14.7z"/><path fill="#4CAF50" d="M24 45c5.3 0 10.2-2 13.8-5.3l-6.4-5.4C29.4 35.9 26.8 37 24 37c-5.2 0-9.6-3.3-11.3-8l-6.6 5.1C8.8 40.3 15.8 45 24 45z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-0.8 2.3-2.3 4.3-4.2 5.7l6.4 5.4C40.9 36.6 45 30.9 45 24c0-1.4-.1-2.5-.4-3.5z"/></svg>
+      Continue with Google
+    </button>
+
+    <button class="social-btn" id="facebookBtn">
+      <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7C18.3 21.1 22 17 22 12z"/></svg>
+      Continue with Facebook
+    </button>
+
+    <div class="divider">or with email</div>
+
+    <form class="auth-form" id="authForm">
+      <input type="text" id="nameField" placeholder="Your name" style="display:none;">
+      <input type="email" id="emailField" placeholder="Email" required>
+      <input type="password" id="passwordField" placeholder="Password" required>
+      <p class="auth-error" id="authError"></p>
+      <button type="submit" class="auth-submit" id="submitBtn">Log in</button>
+    </form>
+  </div>
+</div>
+
+<!-- Firebase SDK (modular v9+) -->
+<script type="module" src="auth.js"></script>
+
+<script>
+  function showView(id) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    const target = document.getElementById('view-' + id);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      history.replaceState(null, '', '#' + id);
+    }
+  }
+
+  document.querySelectorAll('[data-goto]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      showView(el.dataset.goto);
+      if (el.dataset.scroll) {
+        setTimeout(() => {
+          document.getElementById(el.dataset.scroll)?.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      }
+    });
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById('view-' + hash)) {
+      showView(hash);
+    }
+  });
+
+  document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('mobile-open');
+  });
+</script>
+
+</body>
+</html>
