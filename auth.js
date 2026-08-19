@@ -9,6 +9,7 @@
 //    (Project settings → General → Your apps → SDK setup and config)
 // ===========================================================
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
 import {
   getAuth,
@@ -23,8 +24,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 // ---- MY FIREBASE CONFIG ----
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyASx6gAoFK6zCIKTOb-MHO1ZpxHoNtmeSA",
   authDomain: "sportiva-studio.firebaseapp.com",
@@ -34,8 +33,11 @@ const firebaseConfig = {
   appId: "1:1079090358275:web:f47d3ffc56d447d6d98636",
   measurementId: "G-SS4V28K2L9"
 };
+
+// 3. INITIALIZE FIREBASE
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth(app);
 
 // ---- Elements ----
 const modal = document.getElementById('authModal');
