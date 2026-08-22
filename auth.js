@@ -1,13 +1,6 @@
 // ===========================================================
 // Sportiva Studio — Authentication (Firebase)
 // ===========================================================
-// SETUP REQUIRED:
-// 1. Create a free project at https://console.firebase.google.com
-// 2. Enable Google, Facebook, and Email/Password under
-//    Authentication → Sign-in method
-// 3. Replace firebaseConfig below with YOUR project's config
-//    (Project settings → General → Your apps → SDK setup and config)
-// ===========================================================
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
