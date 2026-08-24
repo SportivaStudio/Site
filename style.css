@@ -245,7 +245,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--pink);
 }
 
-/* ---------- Affirmation cards (pinned-note style) ---------- */
+/* ---------- Affirmation cards ---------- */
 .affirm-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -355,7 +355,7 @@ a { color: inherit; text-decoration: none; }
 }
 .embed-block .video-frame {
   position: relative;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
   height: 0;
 }
 .embed-block .video-frame iframe {
