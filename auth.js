@@ -27,10 +27,12 @@ const firebaseConfig = {
   measurementId: "G-SS4V28K2L9"
 };
 
-// 3. INITIALIZE FIREBASE
+// 3. INITIALIZE FIREBASE & PROVIDERS
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 // ---- Elements ----
 const modal = document.getElementById('authModal');
@@ -47,7 +49,6 @@ const authForm = document.getElementById('authForm');
 const authError = document.getElementById('authError');
 const submitBtn = document.getElementById('submitBtn');
 const googleBtn = document.getElementById('googleBtn');
-const facebookBtn = document.getElementById('facebookBtn');
 
 const userChip = document.getElementById('userChip');
 const userAvatar = document.getElementById('userAvatar');
@@ -59,18 +60,18 @@ let mode = 'login'; // or 'signup'
 // ---- Modal open/close ----
 function openModal(startMode) {
   setMode(startMode);
-  modal.classList.add('open');
+  modal.classList.add('active');
 }
 function closeModalFn() {
-  modal.classList.remove('open');
+  modal.classList.remove('active');
   authError.textContent = '';
   authForm.reset();
 }
 
-openLogin.addEventListener('click', () => openModal('login'));
-openSignup.addEventListener('click', () => openModal('signup'));
-closeModal.addEventListener('click', closeModalFn);
-modal.addEventListener('click', (e) => { if (e.target === modal) closeModalFn(); });
+if (openLogin) openLogin.addEventListener('click', () => openModal('login'));
+if (openSignup) openSignup.addEventListener('click', () => openModal('signup'));
+if (closeModal) closeModal.addEventListener('click', closeModalFn);
+if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModalFn(); });
 
 function setMode(newMode) {
   mode = newMode;
@@ -89,67 +90,62 @@ function setMode(newMode) {
     submitBtn.textContent = 'Sign up';
   }
 }
-tabLogin.addEventListener('click', () => setMode('login'));
-tabSignup.addEventListener('click', () => setMode('signup'));
+if (tabLogin) tabLogin.addEventListener('click', () => setMode('login'));
+if (tabSignup) tabSignup.addEventListener('click', () => setMode('signup'));
 
 // ---- Email / Password ----
-authForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  authError.textContent = '';
-  const email = emailField.value.trim();
-  const password = passwordField.value;
+if (authForm) {
+  authForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    authError.textContent = '';
+    const email = emailField.value.trim();
+    const password = passwordField.value;
 
-  try {
-    if (mode === 'signup') {
-      const name = nameField.value.trim();
-      const cred = await createUserWithEmailAndPassword(auth, email, password);
-      if (name) {
-        await updateProfile(cred.user, { displayName: name });
+    try {
+      if (mode === 'signup') {
+        const name = nameField.value.trim();
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        if (name) {
+          await updateProfile(cred.user, { displayName: name });
+        }
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
       }
-    } else {
-      await signInWithEmailAndPassword(auth, email, password);
+      closeModalFn();
+    } catch (err) {
+      authError.textContent = friendlyError(err.code);
     }
-    closeModalFn();
-  } catch (err) {
-    authError.textContent = friendlyError(err.code);
-  }
-});
+  });
+}
 
 // ---- Google ----
-googleBtn.addEventListener('click', async () => {
-  try {
-    await signInWithPopup(auth, googleProvider);
-    closeModalFn();
-  } catch (err) {
-    authError.textContent = friendlyError(err.code);
-  }
-});
+if (googleBtn) {
+  googleBtn.addEventListener('click', async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+      closeModalFn();
+    } catch (err) {
+      authError.textContent = friendlyError(err.code);
+    }
+  });
+}
 
-// ---- Facebook ----
-facebookBtn.addEventListener('click', async () => {
-  try {
-    await signInWithPopup(auth, facebookProvider);
-    closeModalFn();
-  } catch (err) {
-    authError.textContent = friendlyError(err.code);
-  }
-});
 
 // ---- Logout ----
-logoutBtn.addEventListener('click', () => signOut(auth));
+if (logoutBtn) logoutBtn.addEventListener('click', () => signOut(auth));
 
 // ---- Auth state → update header UI ----
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    openLogin.style.display = 'none';
-    openSignup.style.display = 'none';
-    userChip.style.display = 'flex';
-    userName.textContent = user.displayName || user.email || 'Account';
-    userAvatar.src = user.photoURL || 'https://api.dicebear.com/7.x/initials/svg?seed=' + encodeURIComponent(user.displayName || user.email || 'U');
+    if (openLogin) openLogin.style.display = 'none';
+    if (openSignup) openSignup.style.display = 'none';
+    if (userChip) userChip.style.display = 'flex';
+    if (userName) userName.textContent = user.displayName || user.email || 'Account';
+    if (userAvatar) userAvatar.src = user.photoURL || 'https://api.dicebear.com/7.x/initials/svg?seed=' + encodeURIComponent(user.displayName || user.email || 'U');
   } else {
-    openLogin.style.display = 'inline-block';
-    openSignup.style.display = 'inline-block';
-    userChip.style.display = 'none';
+    if (openLogin) openLogin.style.display = 'inline-block';
+    if (openSignup) openSignup.style.display = 'inline-block';
+    if (userChip) userChip.style.display = 'none';
   }
 });
 
